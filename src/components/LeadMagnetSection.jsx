@@ -1,5 +1,4 @@
 import { useMemo, useState } from "react";
-import guidePdfUrl from "../leadmagnet/leadmagnet.pdf?url";
 import { links } from "../data/content";
 import SectionHeading from "./SectionHeading";
 
@@ -102,7 +101,7 @@ export default function LeadMagnetSection() {
     } catch (error) {
       console.error("Lead magnet submit error:", error);
       setServerError(
-        "Nao foi possivel enviar o guia por e-mail agora. Se preferir, fale conosco pelo WhatsApp ou baixe o PDF manualmente.",
+        "Nao foi possivel enviar o guia por e-mail agora. Se preferir, fale conosco pelo WhatsApp.",
       );
     } finally {
       setIsSubmitting(false);
@@ -193,18 +192,6 @@ export default function LeadMagnetSection() {
           ) : null}
 
           {serverError ? <p className="lead-magnet-error">{serverError}</p> : null}
-
-          <p className="lead-magnet-fallback">
-            Prefere baixar agora?{" "}
-            <a href={guidePdfUrl} target="_blank" rel="noreferrer">
-              Abrir PDF manualmente
-            </a>{" "}
-            ou{" "}
-            <a href={links.whatsappCta} target="_blank" rel="noreferrer">
-              falar no WhatsApp
-            </a>
-            .
-          </p>
         </form>
       </div>
     </section>
