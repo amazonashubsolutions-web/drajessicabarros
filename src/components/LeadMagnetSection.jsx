@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { links } from "../data/content";
 import FormSuccessModal from "./FormSuccessModal";
 import SectionHeading from "./SectionHeading";
 import guidePdfUrl from "../leadmagnet/leadmagnet.pdf?url";
@@ -130,6 +131,8 @@ export default function LeadMagnetSection() {
         description="Enviamos o material para o e-mail informado e o download ja deve ter comecado no seu dispositivo."
         note="Se nao encontrar o e-mail, vale conferir a caixa de promocoes ou spam."
         ctaLabel="Perfeito"
+        whatsappHref={links.whatsappCta}
+        whatsappLabel="Prefiro continuar pelo WhatsApp"
       />
 
       <div className="lead-magnet-card">

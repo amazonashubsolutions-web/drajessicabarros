@@ -49,6 +49,22 @@ function buildContactMessage(payload) {
   };
 }
 
+function buildPatientConfirmationMessage(payload) {
+  return {
+    subject: "Recebemos sua mensagem",
+    text:
+      `Ola, ${payload.name}.\n\n` +
+      "Recebemos sua mensagem e, muito em breve, nossa equipe enviara uma resposta.\n\n" +
+      "Se preferir, voce tambem pode continuar o contato diretamente pelo WhatsApp.\n\n" +
+      "Dra. Jessica Barros",
+    html:
+      `<p>Ola, <strong>${payload.name}</strong>.</p>` +
+      "<p>Recebemos sua mensagem e, <strong>muito em breve</strong>, nossa equipe enviara uma resposta.</p>" +
+      "<p>Se preferir, voce tambem pode continuar o contato diretamente pelo WhatsApp.</p>" +
+      "<p>Dra. Jessica Barros</p>",
+  };
+}
+
 export async function processContactSubmission(rawPayload) {
   const payload = normalizePayload(rawPayload);
   const errors = validatePayload(payload);
@@ -65,10 +81,12 @@ export async function processContactSubmission(rawPayload) {
   }
 
   const from = getRequiredEnv("RESEND_FROM");
+  const replyTo = process.env.RESEND_REPLY_TO || from;
   const notifyTo =
     process.env.CONTACT_NOTIFY_TO || process.env.LEADMAGNET_NOTIFY_TO || getRequiredEnv("RESEND_REPLY_TO");
 
   const contactMessage = buildContactMessage(payload);
+  const patientMessage = buildPatientConfirmationMessage(payload);
 
   await sendEmailOrThrow({
     from,
@@ -77,6 +95,15 @@ export async function processContactSubmission(rawPayload) {
     subject: contactMessage.subject,
     text: contactMessage.text,
     html: contactMessage.html,
+  });
+
+  await sendEmailOrThrow({
+    from,
+    to: payload.email,
+    replyTo,
+    subject: patientMessage.subject,
+    text: patientMessage.text,
+    html: patientMessage.html,
   });
 
   return {

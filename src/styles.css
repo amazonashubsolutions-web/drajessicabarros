@@ -1324,6 +1324,22 @@ textarea {
   box-shadow: 0 18px 28px rgba(26, 118, 61, 0.2);
 }
 
+.form-modal-whatsapp-link {
+  margin-top: 10px;
+  color: #2f9f58;
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: left;
+  text-decoration: none;
+}
+
+.form-modal-whatsapp-link:hover,
+.form-modal-whatsapp-link:focus-visible {
+  color: #25884a;
+  text-decoration: underline;
+}
+
 .lead-magnet-microcopy,
 .lead-magnet-success,
 .lead-magnet-error,
@@ -3086,6 +3102,10 @@ textarea {
 
   .form-modal-action {
     width: 100%;
+  }
+
+  .form-modal-whatsapp-link {
+    text-align: center;
   }
 
   .process-card {

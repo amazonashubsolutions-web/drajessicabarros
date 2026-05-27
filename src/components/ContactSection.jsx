@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import { links } from "../data/content";
 import FormSuccessModal from "./FormSuccessModal";
 import SectionHeading from "./SectionHeading";
 
@@ -107,7 +108,9 @@ export default function ContactSection() {
         eyebrow="Mensagem enviada"
         title="Seu contato foi enviado com sucesso"
         description="A equipe da Dra. Jessica recebeu suas informacoes e fara o retorno o mais breve possivel."
-        note="Se preferir, voce tambem pode continuar o atendimento pelo WhatsApp."
+        note="Se preferir adiantar o atendimento, voce tambem pode falar diretamente pelo WhatsApp."
+        whatsappHref={links.whatsappCta}
+        whatsappLabel="Falar agora pelo WhatsApp"
       />
 
       <SectionHeading title="Fale conosco" centered={false} />

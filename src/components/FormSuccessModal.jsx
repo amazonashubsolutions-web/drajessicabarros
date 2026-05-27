@@ -8,6 +8,8 @@ export default function FormSuccessModal({
   description,
   note,
   ctaLabel = "Entendi",
+  whatsappHref,
+  whatsappLabel,
 }) {
   const titleId = useId();
   const descriptionId = useId();
@@ -69,6 +71,17 @@ export default function FormSuccessModal({
             <button type="button" className="form-modal-action" onClick={onClose}>
               {ctaLabel}
             </button>
+
+            {whatsappHref ? (
+              <a
+                className="form-modal-whatsapp-link"
+                href={whatsappHref}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {whatsappLabel || "Continuar o atendimento pelo WhatsApp"}
+              </a>
+            ) : null}
           </div>
         </div>
       </div>
