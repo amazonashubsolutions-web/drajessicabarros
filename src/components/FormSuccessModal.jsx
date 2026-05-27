@@ -49,21 +49,28 @@ export default function FormSuccessModal({
       <button type="button" className="form-modal-backdrop" aria-label="Fechar mensagem" onClick={onClose} />
 
       <div className="form-modal-card">
-        <button type="button" className="form-modal-close" aria-label="Fechar" onClick={onClose}>
-          X
-        </button>
-
-        {eyebrow ? <p className="form-modal-eyebrow">{eyebrow}</p> : null}
-        <div className="form-modal-badge" aria-hidden="true">
-          OK
+        <div className="form-modal-header">
+          {eyebrow ? <p className="form-modal-eyebrow">{eyebrow}</p> : <span />}
+          <button type="button" className="form-modal-close" aria-label="Fechar" onClick={onClose}>
+            X
+          </button>
         </div>
-        <h3 id={titleId}>{title}</h3>
-        <p id={descriptionId} className="form-modal-description">{description}</p>
-        {note ? <p className="form-modal-note">{note}</p> : null}
 
-        <button type="button" className="form-modal-action" onClick={onClose}>
-          {ctaLabel}
-        </button>
+        <div className="form-modal-content">
+          <div className="form-modal-badge" aria-hidden="true">
+            OK
+          </div>
+
+          <div className="form-modal-copy">
+            <h3 id={titleId}>{title}</h3>
+            <p id={descriptionId} className="form-modal-description">{description}</p>
+            {note ? <p className="form-modal-note">{note}</p> : null}
+
+            <button type="button" className="form-modal-action" onClick={onClose}>
+              {ctaLabel}
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
