@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/send-leadmagnet.js": {
+      "includeFiles": "src/leadmagnet/leadmagnet.pdf"
+    }
+  }
+}
