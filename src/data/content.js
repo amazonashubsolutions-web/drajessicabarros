@@ -1,6 +1,5 @@
-
 const whatsappText = encodeURIComponent(
-  "Olá! Gostaria de agendar uma consulta com a Dra. Jéssica Barros.",
+  "Ola! Gostaria de agendar uma consulta com a Dra. Jessica Barros.",
 );
 
 export const brandAssets = {
@@ -30,10 +29,10 @@ export const links = {
 };
 
 export const navItems = [
-  { id: "inicio", label: "Início" },
+  { id: "inicio", label: "Inicio" },
   { id: "sobre", label: "Sobre a Dra." },
-  { id: "servicos", label: "Serviços" },
-  { id: "formacao", label: "Formação" },
+  { id: "servicos", label: "Servicos" },
+  { id: "formacao", label: "Formacao" },
   { id: "diferenciais", label: "Diferenciais" },
   { id: "depoimentos", label: "Depoimentos" },
   { id: "contato", label: "Contato" },
@@ -50,83 +49,83 @@ export const trustItems = [
   },
   {
     icon: "/generated-icons/trust-seguranca.png",
-    title: "Tecnologia e segurança",
+    title: "Tecnologia e seguranca",
   },
   {
     icon: "/generated-icons/trust-referencia.png",
-    title: "Referência em Tucuruí e região",
+    title: "Referencia em Tucurui e regiao",
   },
 ];
 
 export const services = [
   {
     icon: "/generated-icons/service-prenatal.png",
-    title: "Pré-natal",
+    title: "Pre-natal",
     description:
-      "Acompanhamento completo da gestação com segurança, escuta e acolhimento.",
+      "Acompanhamento completo da gestacao com seguranca, escuta e acolhimento.",
   },
   {
     icon: "/generated-icons/service-ginecologia.png",
     title: "Ginecologia",
     description:
-      "Cuidados preventivos, exames de rotina e tratamento de doenças ginecológicas.",
+      "Cuidados preventivos, exames de rotina e tratamento de doencas ginecologicas.",
   },
   {
     icon: "/generated-icons/service-cirurgias.png",
     title: "Cirurgias",
     description:
-      "Procedimentos com técnicas modernas e recuperação mais rápida.",
+      "Procedimentos com tecnicas modernas e recuperacao mais rapida.",
   },
   {
     icon: "/generated-icons/service-estetica.png",
-    title: "Estética ginecológica",
+    title: "Estetica ginecologica",
     description:
       "Procedimentos que promovem bem-estar, autoestima e qualidade de vida.",
   },
   {
     icon: "/generated-icons/service-hormonal.png",
-    title: "Saúde hormonal",
+    title: "Saude hormonal",
     description:
-      "Avaliação e tratamento de desequilíbrios hormonais e menopausa.",
+      "Avaliacao e tratamento de desequilibrios hormonais e menopausa.",
   },
   {
     icon: "/generated-icons/service-contracepcao.png",
-    title: "Contracepção",
+    title: "Contracepcao",
     description:
-      "Opções modernas e personalizadas para cada fase da vida.",
+      "Opcoes modernas e personalizadas para cada fase da vida.",
   },
 ];
 
 export const differentials = [
   {
     icon: "/generated-icons/trust-seguranca.png",
-    title: "Segurança",
-    description: "Protocolos claros, tecnologia atual e cuidado responsável.",
+    title: "Seguranca",
+    description: "Protocolos claros, tecnologia atual e cuidado responsavel.",
   },
   {
     icon: "/generated-icons/formacao-especializacao.png",
-    title: "Experiência",
-    description: "Atuação sólida em saúde da mulher com visão integrada.",
+    title: "Experiencia",
+    description: "Atuacao solida em saude da mulher com visao integrada.",
   },
   {
     icon: "/generated-icons/trust-humanizado.png",
     title: "Acolhimento",
-    description: "Cada paciente é atendida com atenção única e personalizada.",
+    description: "Cada paciente e atendida com atencao unica e personalizada.",
   },
   {
     icon: "/generated-icons/service-contracepcao.png",
     title: "Tecnologia moderna",
-    description: "Abordagem atual para diagnóstico, tratamentos e acompanhamento.",
+    description: "Abordagem atual para diagnostico, tratamentos e acompanhamento.",
   },
   {
     icon: "/generated-icons/formulario-calendario.png",
-    title: "Agendamento ágil",
-    description: "Contato rápido por WhatsApp e Instagram para facilitar sua rotina.",
+    title: "Agendamento agil",
+    description: "Contato rapido por WhatsApp e Instagram para facilitar sua rotina.",
   },
   {
     icon: "/generated-icons/formacao-graduacao.png",
-    title: "Excelência",
-    description: "Padrão premium em atendimento médico feminino e personalizado.",
+    title: "Excelencia",
+    description: "Padrao premium em atendimento medico feminino e personalizado.",
   },
 ];
 
@@ -138,29 +137,29 @@ export const credentials = [
   },
   {
     icon: "/generated-icons/formacao-pos.png",
-    title: "Residência em",
-    description: "Ginecologia e Obstetrícia Santa Casa do Pará",
+    title: "Residencia em",
+    description: "Ginecologia e Obstetricia Santa Casa do Para",
   },
   {
     icon: "/generated-icons/formacao-especializacao.png",
-    title: "Especialização em",
-    description: "Ultrassonografia em Ginecologia e Obstetrícia",
+    title: "Especializacao em",
+    description: "Ultrassonografia em Ginecologia e Obstetricia",
   },
   {
     icon: "/generated-icons/formacao-livro.png",
-    title: "Pós-graduação em",
-    description: "Endoscopia Ginecológica e Cirurgia Minimamente Invasiva",
+    title: "Pos-graduacao em",
+    description: "Endoscopia Ginecologica e Cirurgia Minimamente Invasiva",
   },
   {
     icon: "/generated-icons/formacao-atualizacao.png",
-    title: "Atualização constante",
+    title: "Atualizacao constante",
     description: "Em cursos, congressos e treinamentos",
   },
   {
     icon: "/generated-icons/formacao-livro.png",
     title: "Professora ativa",
     description:
-      "Na Faculdade de Medicina, reforçando sua autoridade profissional e credibilidade.",
+      "Na Faculdade de Medicina, reforcando sua autoridade profissional e credibilidade.",
     featured: true,
   },
 ];
@@ -174,16 +173,16 @@ export const aboutHighlights = [
   {
     icon: "/generated-icons/diff-experiencia.png",
     value: "+7 anos",
-    label: "Escuta, precisão e acompanhamento",
+    label: "Escuta, precisao e acompanhamento",
   },
   {
     icon: "/generated-icons/formacao-graduacao.png",
-    value: "Formação sólida",
-    label: "UFPA e residências médicas",
+    value: "Formacao solida",
+    label: "UFPA e residencias medicas",
   },
   {
     icon: "/generated-icons/formacao-atualizacao.png",
-    value: "Atualização constante",
+    value: "Atualizacao constante",
     label: "Congressos, cursos e treinamentos",
   },
 ];
@@ -191,19 +190,19 @@ export const aboutHighlights = [
 export const testimonials = [
   {
     quote:
-      "A Dra. Jéssica mudou minha experiência com consultas. Atenciosa, explica tudo e me fez sentir segura.",
+      "A Dra. Jessica mudou minha experiencia com consultas. Atenciosa, explica tudo e me fez sentir segura.",
     name: "Juliana S.",
     rating: "5,0",
   },
   {
     quote:
-      "Profissional maravilhosa. Acompanhou meu pré-natal com muito carinho e competência.",
+      "Profissional maravilhosa. Acompanhou meu pre-natal com muito carinho e competencia.",
     name: "Camila R.",
     rating: "5,0",
   },
   {
     quote:
-      "Fiz minha cirurgia com ela e a recuperação foi ótima. Super indico pelo cuidado e clareza.",
+      "Fiz minha cirurgia com ela e a recuperacao foi otima. Super indico pelo cuidado e clareza.",
     name: "Mariana T.",
     rating: "5,0",
   },
@@ -212,17 +211,17 @@ export const testimonials = [
 export const contactDetails = [
   {
     icon: "/generated-icons/trust-referencia.png",
-    title: "Localização",
-    content: ["Rua Itaipu, s/n - Vila Permanente", "Tucuruí - PA, 68464-000", "Brasil"],
+    title: "Localizacao",
+    content: ["Rua Itaipu, s/n - Vila Permanente", "Tucurui - PA, 68464-000", "Brasil"],
   },
   {
     icon: "/generated-icons/trust-personalizado.png",
     title: "Contato",
-    content: ["+55 94 99167-3822", "contato@drajessicabarros.com.br"],
+    content: ["+55 94 99167-3822", "drajessicabarrosgineco@gmail.com"],
   },
   {
     icon: "/generated-icons/formulario-calendario.png",
-    title: "Horário",
-    content: ["Segunda a Sexta: 8h às 18h", "Sábado: 8h às 12h"],
+    title: "Horario",
+    content: ["Segunda a Sexta: 8h as 18h", "Atendimento em dias marcados"],
   },
 ];
