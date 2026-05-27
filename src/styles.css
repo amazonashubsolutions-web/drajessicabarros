@@ -1872,9 +1872,13 @@ textarea {
   margin: 0;
   padding: 12px 14px;
   border-radius: 14px;
-  color: #fffaf8;
-  background: rgba(255, 255, 255, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #7a1f45;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.5;
+  background: rgba(255, 248, 250, 0.96);
+  border: 1px solid rgba(255, 214, 228, 0.9);
+  box-shadow: 0 14px 30px rgba(58, 9, 29, 0.18);
 }
 
 .form-error {
