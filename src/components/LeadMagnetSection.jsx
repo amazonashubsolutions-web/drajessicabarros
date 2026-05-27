@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
-import { links } from "../data/content";
+import FormSuccessModal from "./FormSuccessModal";
 import SectionHeading from "./SectionHeading";
+import guidePdfUrl from "../leadmagnet/leadmagnet.pdf?url";
 
 const initialForm = {
   name: "",
@@ -11,6 +12,16 @@ const initialForm = {
 
 function sanitizePhone(value) {
   return value.replace(/[^\d()+\-\s]/g, "").slice(0, 20);
+}
+
+function triggerGuideDownload() {
+  const link = document.createElement("a");
+  link.href = guidePdfUrl;
+  link.download = "guia-rapido-consulta.pdf";
+  link.rel = "noopener";
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
 }
 
 export default function LeadMagnetSection() {
@@ -95,6 +106,7 @@ export default function LeadMagnetSection() {
 
       localStorage.setItem("dra-jessica-lead-guide-claimed", "true");
       window.dispatchEvent(new CustomEvent("leadmagnet:submitted"));
+      triggerGuideDownload();
       setSubmitted(true);
       setForm(initialForm);
       setTouched({});
@@ -110,6 +122,16 @@ export default function LeadMagnetSection() {
 
   return (
     <section className="section section--lead-magnet" id="guia">
+      <FormSuccessModal
+        open={submitted}
+        onClose={() => setSubmitted(false)}
+        eyebrow="Guia liberado"
+        title="Seu guia foi enviado com sucesso"
+        description="Enviamos o material para o e-mail informado e o download ja deve ter comecado no seu dispositivo."
+        note="Se nao encontrar o e-mail, vale conferir a caixa de promocoes ou spam."
+        ctaLabel="Perfeito"
+      />
+
       <div className="lead-magnet-card">
         <div className="lead-magnet-copy">
           <SectionHeading
@@ -184,12 +206,6 @@ export default function LeadMagnetSection() {
           <p className="lead-magnet-microcopy">
             Seus dados estao seguros. Usamos essas informacoes apenas para enviar o guia e facilitar o contato.
           </p>
-
-          {submitted ? (
-            <p className="lead-magnet-success">
-              Guia enviado com sucesso para o e-mail informado.
-            </p>
-          ) : null}
 
           {serverError ? <p className="lead-magnet-error">{serverError}</p> : null}
         </form>

@@ -1182,6 +1182,123 @@ textarea {
   opacity: 0.78;
 }
 
+.form-modal-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: grid;
+  place-items: center;
+  padding: 22px;
+}
+
+.form-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  border: 0;
+  background: rgba(27, 22, 36, 0.54);
+  backdrop-filter: blur(10px);
+}
+
+.form-modal-card {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  padding: 34px 32px 28px;
+  border: 1px solid rgba(255, 224, 232, 0.96);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.84), transparent 38%),
+    linear-gradient(180deg, rgba(255, 252, 250, 0.99), rgba(255, 244, 246, 0.99));
+  box-shadow: 0 36px 80px rgba(68, 24, 44, 0.24);
+  text-align: center;
+}
+
+.form-modal-close {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 999px;
+  color: #90506a;
+  font-size: 0.94rem;
+  font-weight: 800;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 8px 18px rgba(130, 61, 88, 0.12);
+  cursor: pointer;
+}
+
+.form-modal-eyebrow {
+  margin: 0;
+  color: #de4e7c;
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.form-modal-badge {
+  display: grid;
+  place-items: center;
+  width: 74px;
+  height: 74px;
+  margin: 18px auto 18px;
+  border-radius: 24px;
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 800;
+  background:
+    radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.2), transparent 30%),
+    linear-gradient(135deg, #f06b96 0%, #dc4a7b 100%);
+  box-shadow:
+    0 18px 34px rgba(208, 66, 116, 0.26),
+    inset 0 1px 0 rgba(255, 255, 255, 0.24);
+}
+
+.form-modal-card h3 {
+  margin: 0;
+  color: #22293f;
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  line-height: 1.02;
+}
+
+.form-modal-description {
+  margin: 14px auto 0;
+  max-width: 420px;
+  color: #586075;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.form-modal-note {
+  margin: 14px auto 0;
+  max-width: 420px;
+  color: #7b4a60;
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.form-modal-action {
+  min-width: 188px;
+  min-height: 52px;
+  margin-top: 22px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: 16px;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 800;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  background:
+    radial-gradient(circle at 88% 52%, rgba(120, 227, 158, 0.14), rgba(120, 227, 158, 0) 30%),
+    linear-gradient(135deg, #43b765 0%, #2f9f58 58%, #25884a 100%);
+  box-shadow: 0 18px 28px rgba(26, 118, 61, 0.2);
+}
+
 .lead-magnet-microcopy,
 .lead-magnet-success,
 .lead-magnet-error,
@@ -2906,6 +3023,41 @@ textarea {
 
   .lead-magnet-form {
     padding: 18px;
+  }
+
+  .form-modal-layer {
+    padding: 16px;
+  }
+
+  .form-modal-card {
+    padding: 30px 20px 22px;
+  }
+
+  .form-modal-close {
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .form-modal-badge {
+    width: 64px;
+    height: 64px;
+    margin-top: 16px;
+    font-size: 1.7rem;
+  }
+
+  .form-modal-card h3 {
+    font-size: clamp(1.72rem, 9vw, 2.2rem);
+  }
+
+  .form-modal-description,
+  .form-modal-note {
+    max-width: none;
+  }
+
+  .form-modal-action {
+    width: 100%;
   }
 
   .process-card {

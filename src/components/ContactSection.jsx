@@ -1,4 +1,5 @@
 import { useMemo, useState } from "react";
+import FormSuccessModal from "./FormSuccessModal";
 import SectionHeading from "./SectionHeading";
 
 const initialForm = {
@@ -100,6 +101,15 @@ export default function ContactSection() {
 
   return (
     <article className="contact-card" id="contato">
+      <FormSuccessModal
+        open={submitted}
+        onClose={() => setSubmitted(false)}
+        eyebrow="Mensagem enviada"
+        title="Seu contato foi enviado com sucesso"
+        description="A equipe da Dra. Jessica recebeu suas informacoes e fara o retorno o mais breve possivel."
+        note="Se preferir, voce tambem pode continuar o atendimento pelo WhatsApp."
+      />
+
       <SectionHeading title="Fale conosco" centered={false} />
 
       <div className="contact-card__layout">
@@ -157,12 +167,6 @@ export default function ContactSection() {
             {isSubmitting ? "Enviando..." : "Enviar mensagem"}
             <span aria-hidden="true">→</span>
           </button>
-
-          {submitted ? (
-            <p className="form-success">
-              Mensagem enviada com sucesso para a equipe da Dra. Jessica.
-            </p>
-          ) : null}
 
           {serverError ? <p className="form-error">{serverError}</p> : null}
         </form>

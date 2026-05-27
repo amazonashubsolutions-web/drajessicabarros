@@ -59,13 +59,13 @@ function buildInternalNotification(payload) {
   return {
     subject: "Novo Contato Site - Dra Jessica | Guia Gratuita",
     text:
-      "Novo pedido do lead magnet.\n\n" +
+      "Nova solicitacao da guia gratuita pelo site.\n\n" +
       `Nome: ${payload.name}\n` +
       `E-mail: ${payload.email}\n` +
       `WhatsApp: ${payload.whatsapp}\n` +
       `Necessidade: ${payload.need || "Nao informado"}`,
     html:
-      "<p>Novo pedido do lead magnet.</p>" +
+      "<p>Nova solicitacao da guia gratuita pelo site.</p>" +
       `<p><strong>Nome:</strong> ${payload.name}<br />` +
       `<strong>E-mail:</strong> ${payload.email}<br />` +
       `<strong>WhatsApp:</strong> ${payload.whatsapp}<br />` +
