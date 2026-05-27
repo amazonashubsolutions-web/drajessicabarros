@@ -9,9 +9,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "nodemailer": "^8.0.9",
     "react": "^19.2.0",
-    "react-dom": "^19.2.0"
+    "react-dom": "^19.2.0",
+    "resend": "^6.12.4"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^5.1.0",

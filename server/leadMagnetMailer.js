@@ -1,6 +1,6 @@
 import fs from "node:fs/promises";
 import path from "node:path";
-import { createTransporter, getRequiredEnv } from "./mailTransport.js";
+import { getRequiredEnv, sendEmailOrThrow } from "./mailTransport.js";
 
 const guidePath = path.resolve(process.cwd(), "src", "leadmagnet", "leadmagnet.pdf");
 
@@ -90,19 +90,19 @@ export async function processLeadMagnetSubmission(rawPayload) {
 
   await fs.access(guidePath);
 
-  const transporter = createTransporter();
-  const from = getRequiredEnv("SMTP_FROM");
-  const replyTo = process.env.SMTP_REPLY_TO || from;
+  const from = getRequiredEnv("RESEND_FROM");
+  const replyTo = process.env.RESEND_REPLY_TO || from;
   const notifyTo = process.env.LEADMAGNET_NOTIFY_TO;
+  const guideBuffer = await fs.readFile(guidePath);
   const attachment = {
     filename: "guia-rapido-consulta.pdf",
-    path: guidePath,
+    content: guideBuffer,
     contentType: "application/pdf",
   };
 
   const patientMessage = buildPatientMessage(payload);
 
-  await transporter.sendMail({
+  await sendEmailOrThrow({
     from,
     to: payload.email,
     replyTo,
@@ -115,7 +115,7 @@ export async function processLeadMagnetSubmission(rawPayload) {
   if (notifyTo) {
     const internalMessage = buildInternalNotification(payload);
 
-    await transporter.sendMail({
+    await sendEmailOrThrow({
       from,
       to: notifyTo,
       replyTo: payload.email,

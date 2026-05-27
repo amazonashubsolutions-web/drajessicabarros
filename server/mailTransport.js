@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
 
 export function getRequiredEnv(name) {
   const value = process.env[name];
@@ -10,20 +10,19 @@ export function getRequiredEnv(name) {
   return value;
 }
 
-export function createTransporter() {
-  const host = getRequiredEnv("SMTP_HOST");
-  const port = Number(process.env.SMTP_PORT || 587);
-  const user = getRequiredEnv("SMTP_USER");
-  const pass = getRequiredEnv("SMTP_PASS");
-  const secure = `${process.env.SMTP_SECURE || ""}`.toLowerCase() === "true" || port === 465;
+export function createMailClient() {
+  const apiKey = getRequiredEnv("RESEND_API_KEY");
 
-  return nodemailer.createTransport({
-    host,
-    port,
-    secure,
-    auth: {
-      user,
-      pass,
-    },
-  });
+  return new Resend(apiKey);
+}
+
+export async function sendEmailOrThrow(payload) {
+  const client = createMailClient();
+  const { data, error } = await client.emails.send(payload);
+
+  if (error) {
+    throw new Error(error.message || "Resend email request failed.");
+  }
+
+  return data;
 }

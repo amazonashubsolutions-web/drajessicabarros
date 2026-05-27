@@ -1,4 +1,4 @@
-import { createTransporter, getRequiredEnv } from "./mailTransport.js";
+import { getRequiredEnv, sendEmailOrThrow } from "./mailTransport.js";
 
 function normalizePayload(payload = {}) {
   return {
@@ -64,14 +64,13 @@ export async function processContactSubmission(rawPayload) {
     };
   }
 
-  const transporter = createTransporter();
-  const from = getRequiredEnv("SMTP_FROM");
+  const from = getRequiredEnv("RESEND_FROM");
   const notifyTo =
-    process.env.CONTACT_NOTIFY_TO || process.env.LEADMAGNET_NOTIFY_TO || getRequiredEnv("SMTP_REPLY_TO");
+    process.env.CONTACT_NOTIFY_TO || process.env.LEADMAGNET_NOTIFY_TO || getRequiredEnv("RESEND_REPLY_TO");
 
   const contactMessage = buildContactMessage(payload);
 
-  await transporter.sendMail({
+  await sendEmailOrThrow({
     from,
     to: notifyTo,
     replyTo: payload.email,
