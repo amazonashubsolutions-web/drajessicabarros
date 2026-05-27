@@ -57,7 +57,7 @@ function buildPatientMessage(payload) {
 
 function buildInternalNotification(payload) {
   return {
-    subject: `Novo lead do guia gratuito: ${payload.name}`,
+    subject: "Novo Contato Site - Dra Jessica | Guia Gratuita",
     text:
       "Novo pedido do lead magnet.\n\n" +
       `Nome: ${payload.name}\n` +

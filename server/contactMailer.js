@@ -33,7 +33,7 @@ function validatePayload(payload) {
 
 function buildContactMessage(payload) {
   return {
-    subject: `Novo contato pelo site: ${payload.name}`,
+    subject: "Novo Contato Site - Dra Jessica | Formulario de contato",
     text:
       "Novo contato enviado pelo formulario Fale conosco.\n\n" +
       `Nome: ${payload.name}\n` +
