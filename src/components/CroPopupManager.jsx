@@ -19,7 +19,7 @@ const popupContent = {
     eyebrow: "Tratamento personalizado",
     title: "Ja conhece nossos servicos?",
     text: "Clique aqui e veja o passo a passo do seu tratamento personalizado.",
-    cta: "Ver Processo",
+    cta: "Ver Servicos",
     href: "#servicos",
     microcopy: "Leva menos de 1 minuto.",
   },
